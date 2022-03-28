@@ -262,3 +262,11 @@ ul {
         column-gap: 32px;
     }
 }
+
+@media (min-width: 1311px) {
+
+    .swiper-wrapper,
+    .more {
+        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    }
+}
