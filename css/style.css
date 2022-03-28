@@ -65,7 +65,7 @@ ul {
 }
 
 .companies__wrapper {
-    margin: 16px 0px 0px 16px;
+    padding: 16px 0px 0px 16px;
 }
 
 .title {
@@ -99,6 +99,10 @@ ul {
     background: #FFFFFF;
     border: 1px solid #EAEAEA;
     border-radius: 6px;
+}
+
+.companies-list__item:focus-within {
+    border: 1px solid black;
 }
 
 .companies-list__item-small {
@@ -176,9 +180,13 @@ ul {
 
 }
 
+.more__item--visibility-hidden {
+    display: none;
+}
+
 @media (min-width: 500px) {
     .companies__wrapper {
-        margin: 16px 16px 0px 16px;
+        padding: 16px 16px 0px 16px;
     }
 
     .button-show-more,
@@ -193,7 +201,7 @@ ul {
     .swiper-wrapper,
     .more {
         display: grid;
-        grid-template-columns: 224px 224px;
+        grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
         gap: 16px;
         justify-content: space-between;
     }
@@ -203,7 +211,7 @@ ul {
     }
 
     .swiper-slide {
-        width: 224px;
+        width: 100%;
     }
 
     .swiper-slide--hidden,
@@ -213,52 +221,22 @@ ul {
     }
 }
 
-@media (min-width: 600px) {
-
-    .swiper-wrapper,
-    .more {
-        justify-content: space-evenly;
-    }
-}
-
 @media (min-width: 768px) {
     .companies__title {
         margin-bottom: 40px;
     }
 
-    .swiper-wrapper,
-    .more {
-        grid-template-columns: 224px 224px 224px;
-        justify-content: space-between;
+    .companies__wrapper {
+        padding: 16px 24px 0px 24px;
     }
 
-    .companies__wrapper {
-        margin: 16px 24px 0px 24px;
+    .swiper-wrapper,
+    .more {
+        column-gap: 24px;
     }
 }
 
-@media (min-width: 920px) {
-
-    .swiper-wrapper,
-    .more {
-        grid-template-columns: 240px 240px 240px;
-    }
-
-    .swiper-slide {
-        width: 240px;
-    }
-}
-
-@media (min-width: 1120px) {
-
-    .swiper-wrapper,
-    .more {
-        grid-template-columns: 240px 240px 240px 240px;
-    }
-
-    .companies__wrapper {
-        margin: 16px 32px 0px 32px;
-    }
+@media (min-width: 1016px) {
 
     .more__item--hidden {
         display: none;
@@ -266,5 +244,21 @@ ul {
 
     .swiper-slide--visible {
         display: block;
+    }
+
+    .more__item--visibility-hidden {
+        display: block;
+        visibility: hidden;
+    }
+}
+
+@media (min-width: 1120px) {
+    .companies__wrapper {
+        padding: 16px 32px 0px 32px;
+    }
+
+    .swiper-wrapper,
+    .more {
+        column-gap: 32px;
     }
 }
